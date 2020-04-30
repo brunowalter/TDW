@@ -189,6 +189,7 @@ public class ObjectModelBean implements Serializable {
         try (JsonReader reader = Json.createReader(new StringReader(jsonTextArea))) {
             parsed = reader.readObject();
         }
+
         /* Represent the DOM tree on a list for a JSF table */
         rowList = new ArrayList<>();
         this.printTree(parsed, 0, "");
@@ -230,6 +231,7 @@ public class ObjectModelBean implements Serializable {
                 break;
         }
     }
+    
     /* Used for showing the JSON DOM tree as rows in a JSF table */
     public class DOMTreeRow {
         private int level;
@@ -243,6 +245,7 @@ public class ObjectModelBean implements Serializable {
             this.name = name;
             this.value = value;
         }
+        
         public int getLevel() { return level; }
         public String getType() { return type; }
         public String getName() { return name; }
