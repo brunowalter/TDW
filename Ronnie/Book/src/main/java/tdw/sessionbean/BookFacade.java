@@ -12,7 +12,7 @@ import tdw.entities.Book;
 
 /**
  *
- * @author walte
+ * @author renat
  */
 @Stateless
 public class BookFacade extends AbstractFacade<Book> implements BookFacadeLocal {

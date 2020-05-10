@@ -11,7 +11,7 @@ import tdw.entities.Book;
 
 /**
  *
- * @author walte
+ * @author renat
  */
 @Local
 public interface BookFacadeLocal {
