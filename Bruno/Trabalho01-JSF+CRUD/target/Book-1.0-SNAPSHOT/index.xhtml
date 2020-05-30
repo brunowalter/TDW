@@ -48,10 +48,10 @@
                     <h:outputText value="$#{book.price}"/>
                 </p:column>
                 <p:column style="width:100px;text-align: center">
-                    <p:commandButton icon="fa-pencil" update=":form:bookEdit" oncomplete="PF('editDialog').show()">
+                    <p:commandButton value="E" icon="fa-pencil" update=":form:bookEdit" oncomplete="PF('editDialog').show()">
                         <f:setPropertyActionListener value="#{book}" target="#{bookController.selectedBook}"/>
                     </p:commandButton>
-                    <p:commandButton action="#{bookController.deleteBook(book)}" icon="fa-trash"></p:commandButton>
+                    <p:commandButton value="D" action="#{bookController.deleteBook(book)}" icon="fa-trash"></p:commandButton>
                 </p:column>
             </p:dataTable>
             <p:dialog header="Edit Book" widgetVar="editDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
