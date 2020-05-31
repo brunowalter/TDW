@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Ronnie
+ * @author walte
  */
 @Named(value = "UserNumberBean")
 @SessionScoped
@@ -27,7 +27,6 @@ public class UserNumberBean implements Serializable {
     public UserNumberBean() {
 
         Random randomGR = new Random();
-
         randomInt = randomGR.nextInt(10);
         System.out.println("Duke's number: " + randomInt);
 
@@ -43,15 +42,16 @@ public class UserNumberBean implements Serializable {
 
     public String getResponse() {
         if ((userNumber != null) && (userNumber.compareTo(randomInt) == 0)) {
-//invalidate user session
+            //invalidate user session
             FacesContext context = FacesContext.getCurrentInstance();
             HttpSession session
                     = (HttpSession) context.getExternalContext().getSession(false);
             session.invalidate();
-
-            return "Certô, miserávi!";
+            return "Yay! You got it!";
         } else {
-            return "<p>Mancada, " + userNumber + " não é.</p>" + "<p>Tenta de novo...</p>";
+            return "<p>Sorry, " + userNumber + " isn't it.</p>"
+                    + "<p>Guess again...</p>";
+
         }
     }
 
